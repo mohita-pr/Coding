@@ -22,7 +22,6 @@ int toInt(String s)
     return num;
 }
 
-
 int evalTree(node* root) {
     
     if(root==NULL)
