@@ -28,9 +28,7 @@ int level(struct Node *root, struct Node *ptr, int lev)
 // Returns 1 if a and b are cousins, otherwise 0 
 int isCousin(struct Node *root, struct Node *a, struct Node *b) 
 { 
-    //1. The two Nodes should be on the same level in the binary tree. 
-    //2. The two Nodes should not be siblings (means that they should 
-    // not have the same parent Node). 
+     
     if ((level(root,a,1) == level(root,b,1)) && !(isSibling(root,a,b))) 
         return 1; 
     else return 0; 

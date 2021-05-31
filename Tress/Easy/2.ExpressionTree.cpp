@@ -28,7 +28,7 @@ int evalTree(node* root) {
         return 0;
     
     if (root->left==NULL && root->right==NULL)
-        return toInt(root->data);
+        return stoi(root->data);
     int left = evalTree(root->left);
     int right = evalTree(root->right);
     

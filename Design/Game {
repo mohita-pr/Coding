@@ -1,0 +1,55 @@
+Game {
+    Name;
+    NoOfPlayers;
+    
+    CreateMatch(Palyer p1)
+    CreateMatch(Player p1 Player p2)
+}
+
+Match {
+    NoOfCurrPlayers
+    Player p[2]  
+    winner
+    chance 0 or 1
+   
+    AddPlayer()
+    InitializeBoard() {
+        chance = 0;
+    }
+    StartMatch() {
+        while(!Match.IsOver()) {
+            Player[chance].Move();
+            chance = !chance;
+        }
+    }
+    IsOver()
+    getWinner()
+}
+
+Player {
+    level
+    score
+    type - o or x
+    Cell position
+   
+        
+
+    Move(type, Cell dest) {
+       dest.isoccupied = true;
+       dest.value = type;
+      IsOver()
+    }
+}
+
+
+
+Board {
+    Cell[3][3]
+}
+Cell
+{
+    isoccupied
+    value - type
+    row
+    col
+}

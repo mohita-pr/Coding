@@ -1,0 +1,46 @@
+bool wait(long milliseconds, Task &task ) {
+ 
+  
+  time.sleep(milliseconds)
+  
+  task.run();
+
+}
+
+class TaskScheduler  {
+
+  void scheduleWithDelay(Task &task, long milliseconds);
+  
+  void scheduleWithDelay(Task &task, long milliseconds){
+    
+    
+   thread t1;
+    t1(wait(milliseconds,task));
+    
+    
+  }
+  
+  
+  
+}
+
+
+scheduleWithDelay(() => println("bye"), 5000L) # 5 seconds
+sleep(1000)      
+scheduleWithDelay(() => println("hi"), 3000L) # 4th scond
+sleep(1000)                                       # 2nd second
+  scheduleWithDelay(() => println("ola"), 1000L)  # 3rd second
+
+ola # at time 3000 
+hi # at time 4000
+bye # at time 5000
+
+
+   hi - after 4 seconds
+  bye - after 5 seconds
+
+
+class BaseTask {
+  public:
+    abstract void run();
+}
